@@ -35,6 +35,14 @@ namespace MAD.API.Lever.Domain
             public DataProtectionDetail Contact { get; set; }
         }
 
+        public class Archive
+        {
+            [JsonConverter(typeof(MillisecondEpochConverter))]
+            public DateTime? ArchivedAt { get; set; }
+
+            public string Reason { get; set; }
+        }
+
         public string Id { get; set; }
         public string Name { get; set; }
         public string Headline { get; set; }
@@ -57,10 +65,7 @@ namespace MAD.API.Lever.Domain
         [JsonConverter(typeof(MillisecondEpochConverter))]
         public DateTime? SnoozedUntil { get; set; }
 
-        [JsonConverter(typeof(MillisecondEpochConverter))]
-        public DateTime? ArchivedAt { get; set; }
-
-        public string ArchivedReason { get; set; }
+        public Archive Archived { get; set; }
 
         public string Stage { get; set; }
 
