@@ -4,7 +4,7 @@ using System.Text;
 
 namespace MAD.API.Lever.Api
 {
-    internal class ApiResponse <T>
+    public class ApiResponse <T>
     {
         public T[] Data { get; set; }
 
